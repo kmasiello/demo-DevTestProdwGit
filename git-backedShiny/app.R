@@ -4,7 +4,7 @@ library(shiny)
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("Old Faithful Geyser Data "),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
@@ -12,8 +12,8 @@ ui <- fluidPage(
             sliderInput("bins",
                         "Number of bins:",
                         min = 1,
-                        max = 50,
-                        value = 10)
+                        max = 60,
+                        value = 25)
         ),
 
         # Show a plot of the generated distribution
@@ -32,7 +32,7 @@ server <- function(input, output) {
         bins <- seq(min(x), max(x), length.out = input$bins + 1)
 
         # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'firebrick', border = 'white')
+        hist(x, breaks = bins, col = 'goldenrod1', border = 'gray')
     })
 }
 
