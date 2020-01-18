@@ -13,7 +13,7 @@ ui <- fluidPage(
                         "Number of bins:",
                         min = 1,
                         max = 50,
-                        value = 30)
+                        value = 10)
         ),
 
         # Show a plot of the generated distribution
@@ -32,7 +32,7 @@ server <- function(input, output) {
         bins <- seq(min(x), max(x), length.out = input$bins + 1)
 
         # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'lightseagreen', border = 'white')
+        hist(x, breaks = bins, col = 'firebrick', border = 'white')
     })
 }
 
