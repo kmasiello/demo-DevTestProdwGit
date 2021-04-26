@@ -2,12 +2,13 @@ library(shiny)
 library(thematic)
 
 thematic_shiny(font = "auto")
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
     theme = bslib::bs_theme(
         bg = "#002B36", fg = "#EEE8D5", primary = "#2AA198",
         # bslib also makes it easy to import CSS fonts
-        base_font = bslib::font_google("Pacifico")
+        base_font = bslib::font_google("Abel")
     ),
     # Application title
     titlePanel("Old Faithful Geyser Data"),
