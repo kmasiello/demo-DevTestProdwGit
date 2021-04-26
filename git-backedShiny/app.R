@@ -1,8 +1,14 @@
 library(shiny)
+library(thematic)
 
+thematic_shiny(font = "auto")
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-
+    theme = bslib::bs_theme(
+        bg = "#002B36", fg = "#EEE8D5", primary = "#2AA198",
+        # bslib also makes it easy to import CSS fonts
+        base_font = bslib::font_google("Pacifico")
+    ),
     # Application title
     titlePanel("Old Faithful Geyser Data"),
 
@@ -32,7 +38,7 @@ server <- function(input, output) {
         bins <- seq(min(x), max(x), length.out = input$bins + 1)
 
         # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'blue', border = 'gray')
+        hist(x, breaks = bins, col = "#2AA198", border = 'gray')
     })
 }
 
